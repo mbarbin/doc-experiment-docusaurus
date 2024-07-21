@@ -1,0 +1,4 @@
+(mdx
+ (deps
+  (package mylib))
+ (preludes prelude.txt))

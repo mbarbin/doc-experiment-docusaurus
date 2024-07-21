@@ -1,4 +1,4 @@
-let hello_world = [%sexp "Hello, World!"]
+let hello_world = [%sexp "Hello, World From My Other Lib!"]
 
 let print_cmd =
   Command.basic

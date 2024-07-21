@@ -15,6 +15,8 @@
 
 (documentation "https://mbarbin.github.io/doc-experiment-docusaurus/")
 
+(using mdx 0.4)
+
 (package
  (name mylib)
  (synopsis "A package named mylib in this project")
@@ -36,6 +38,8 @@
     :with-test
     (>= v0.17)
     (< v0.18)))
+  (mdx
+   (>= 2.4))
   (ppx_compare
    (and
     (>= v0.17)
