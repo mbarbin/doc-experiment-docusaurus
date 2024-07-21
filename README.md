@@ -14,6 +14,6 @@ Welcome to this experiment with documentation tools! In this project, we're expl
 
 We envision this project as a template and example for the OCaml community, demonstrating the power and flexibility of combining these tools. We welcome PRs, encourage you to try this setup in your projects, and invite you to share your experiences and suggestions with us. Let's innovate documentation together!
 
-# ![project's ico](./doc/static/img/doc-experiment..ico?raw=true) Status
+# ![project's ico](./doc/static/img/favicon.ico?raw=true) Status
 
 This repo is currently experimental and under construction. It's a work in progress, and I'm eager to dive deeper into the features, seeking to enrich this experiment with community feedback and collaboration.
