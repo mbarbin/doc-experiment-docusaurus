@@ -1,0 +1,26 @@
+(library
+ (name mylib_test)
+ (flags
+  :standard
+  -w
+  +a-4-40-41-42-44-45-48-66
+  -warn-error
+  +a
+  -open
+  Base
+  -open
+  Expect_test_helpers)
+ (libraries base expect-test-helpers mylib)
+ (inline_tests)
+ (lint
+  (pps ppx_js_style -check-doc-comments))
+ (preprocess
+  (pps
+   ppx_compare
+   ppx_enumerate
+   ppx_expect
+   ppx_hash
+   ppx_here
+   ppx_let
+   ppx_sexp_conv
+   ppx_sexp_value)))
