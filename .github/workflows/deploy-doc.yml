@@ -14,7 +14,6 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./doc
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,6 +28,7 @@ jobs:
           cache-dependency-path: doc/package-lock.json
 
       - name: Install Docusaurus Dependencies
+        working-directory: ./doc
         run: npm ci
 
       - name: Setup OCaml
@@ -53,6 +53,7 @@ jobs:
           cp -R _build/default/_doc/_html doc/static/odoc
 
       - name: Build Website
+        working-directory: ./doc
         run: npm run build
 
       - name: Upload Build Artifact
