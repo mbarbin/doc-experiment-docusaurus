@@ -20,7 +20,7 @@ This repo is currently experimental and under construction. It's a work in progr
 
 ## Acknowledgements
 
-The essence of the doc-experiment project lies in creating a setup that makes uses of the capabilities of several remarkable tools. It's a symphony where each tool plays a crucial role, contributing to a seamless documentation experience for OCaml projects. The real magic, however, resides in the hard work, dedication, and innovation embedded within each of these tools. We are immensely thankful for the amazing features these tools offer and even more so to the myriad of contributors behind them.
+The essence of the doc-experiment project lies in creating a setup where each tool plays a crucial role, contributing to a seamless documentation experience for OCaml projects. The real magic, however, resides in the hard work, dedication, and innovation embedded within each of these tools. We are immensely thankful for the amazing features these tools offer and even more so to the myriad of contributors behind them.
 
 We extend our deepest gratitude to the following projects and their contributors:
 
