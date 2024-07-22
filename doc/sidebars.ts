@@ -12,6 +12,10 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
  */
 const sidebars: SidebarsConfig = {
 
+  odocSidebar: [
+    { type: 'doc', id: 'odoc/odoc', label: 'OCaml Packages' },
+  ],
+
   mylibSidebar: [
     {
       type: 'category',

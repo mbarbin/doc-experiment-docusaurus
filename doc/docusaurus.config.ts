@@ -67,6 +67,12 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
+          sidebarId: 'odocSidebar',
+          position: 'left',
+          label: 'OCaml Packages',
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'mylibSidebar',
           position: 'left',
           label: 'Mylib',
@@ -85,6 +91,10 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
+            {
+              label: 'OCaml Packages',
+              to: '/docs/odoc/',
+            },
             {
               label: 'Mylib',
               to: '/docs/mylib/hello_mylib/',
