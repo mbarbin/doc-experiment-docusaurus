@@ -12,16 +12,42 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
  */
 const sidebars: SidebarsConfig = {
 
-  odocSidebar: [
-    { type: 'doc', id: 'odoc/odoc', label: 'OCaml Packages' },
-  ],
-
-  mylibSidebar: [
+  tutorialsSidebar: [
     {
       type: 'category',
-      label: 'Mylib',
+      label: 'Tutorials',
       items: [
-        { type: 'doc', id: 'mylib/hello_mylib', label: 'Hello Mylib' },
+        { type: 'doc', id: 'tutorials/hello-mylib/README', label: 'Hello Mylib' },
+      ],
+    },
+  ],
+
+  guidesSidebar: [
+    {
+      type: 'category',
+      label: 'Guides',
+      items: [
+        { type: 'doc', id: 'guides/README', label: 'Introduction' },
+      ],
+    },
+  ],
+
+  referenceSidebar: [
+    {
+      type: 'category',
+      label: 'Reference',
+      items: [
+        { type: 'doc', id: 'reference/odoc', label: 'OCaml Packages' },
+      ],
+    },
+  ],
+
+  explanationSidebar: [
+    {
+      type: 'category',
+      label: 'Explanation',
+      items: [
+        { type: 'doc', id: 'explanation/README', label: 'Introduction' },
       ],
     },
   ],

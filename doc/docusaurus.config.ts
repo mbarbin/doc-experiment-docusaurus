@@ -73,17 +73,29 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'odocSidebar',
+          sidebarId: 'tutorialsSidebar',
           position: 'left',
-          label: 'OCaml Packages',
+          label: 'Tutorials',
         },
         {
           type: 'docSidebar',
-          sidebarId: 'mylibSidebar',
+          sidebarId: 'guidesSidebar',
           position: 'left',
-          label: 'Mylib',
+          label: 'Guides',
         },
-        { to: '/blog/', label: 'Blog', position: 'left' },
+        {
+          type: 'docSidebar',
+          sidebarId: 'referenceSidebar',
+          position: 'left',
+          label: 'Reference',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'explanationSidebar',
+          position: 'left',
+          label: 'Explanation',
+        },
+        { to: '/blog/', label: 'Blog', position: 'right' },
         {
           href: 'https://github.com/mbarbin/doc-experiment-docusaurus',
           label: 'GitHub',
@@ -104,12 +116,20 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'OCaml Packages',
-              to: '/docs/odoc/',
+              label: 'Tutorials',
+              to: '/docs/tutorials/hello-mylib/',
             },
             {
-              label: 'Mylib',
-              to: '/docs/mylib/hello_mylib/',
+              label: 'Guides',
+              to: '/docs/guides/',
+            },
+            {
+              label: 'Reference',
+              to: '/docs/reference/odoc/',
+            },
+            {
+              label: 'Explanation',
+              to: '/docs/explanation/',
             },
           ],
         },
