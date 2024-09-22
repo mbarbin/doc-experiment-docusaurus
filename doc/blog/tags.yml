@@ -2,3 +2,8 @@ hello:
   label: Hello
   permalink: /hello
   description: Hello tag description
+
+discuss:
+  label: discuss.ocaml.org
+  permalink: /discuss
+  description: OCaml Discourse Forum
