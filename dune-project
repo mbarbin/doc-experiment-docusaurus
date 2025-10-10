@@ -33,7 +33,7 @@
    (and
     (>= v0.17)
     (< v0.18)))
-  (expect-test-helpers
+  (expect_test_helpers_core
    (and
     :with-test
     (>= v0.17)
@@ -103,7 +103,7 @@
    (and
     (>= v0.17)
     (< v0.18)))
-  (expect-test-helpers
+  (expect_test_helpers_core
    (and
     :with-test
     (>= v0.17)
