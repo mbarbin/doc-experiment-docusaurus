@@ -1,8 +1,12 @@
 name: ci
 
 on:
-  - pull_request
-  - push
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - "**" # This will match pull requests targeting any branch
 
 jobs:
   build:
@@ -12,13 +16,13 @@ jobs:
         os:
           - ubuntu-latest
         ocaml-compiler:
-          - 5.2.x
+          - 5.3.x
 
     runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup OCaml
         uses: ocaml/setup-ocaml@v3
@@ -27,11 +31,11 @@ jobs:
           opam-repositories: |
             default: https://github.com/ocaml/opam-repository.git
             mbarbin: https://github.com/mbarbin/opam-repository.git
-#           janestreet-bleeding: https://github.com/janestreet/opam-repository.git
-#           janestreet-bleeding-external: https://github.com/janestreet/opam-repository.git#external-packages
+      #     janestreet-bleeding: https://github.com/janestreet/opam-repository.git
+      #     janestreet-bleeding-external: https://github.com/janestreet/opam-repository.git#external-packages
 
       - name: Install dependencies
-        run: opam install . --deps-only --with-doc --with-test
+        run: opam install . --deps-only --with-doc --with-test --with-dev-setup
 
       - name: Build
         run: opam exec -- dune build @all @lint
