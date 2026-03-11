@@ -1,4 +1,5 @@
 (mdx
+ (package doc-experiment-docusaurus-dev)
  (deps
   (package mylib))
  (preludes prelude.txt))

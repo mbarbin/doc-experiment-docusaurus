@@ -13,9 +13,6 @@ depends: [
   "cmdlang" {>= "0.0.9"}
   "cmdlang-cmdliner-err-runner" {>= "0.0.16"}
   "dune-build-info" {>= "3.17"}
-  "mdx" {>= "2.4"}
-  "ppx_expect" {with-test & >= "v0.17" & < "v0.18"}
-  "sherlodoc" {with-doc & >= "0.2"}
   "odoc" {with-doc}
 ]
 build: [

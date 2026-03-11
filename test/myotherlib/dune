@@ -1,5 +1,6 @@
 (library
  (name myotherlib_test)
+ (package doc-experiment-docusaurus-tests)
  (flags :standard -w +a-4-40-41-42-44-45-48-66 -warn-error +a)
  (libraries myotherlib)
  (inline_tests)

@@ -30,18 +30,7 @@
   (cmdlang-cmdliner-err-runner
    (>= 0.0.16))
   (dune-build-info
-   (>= 3.17))
-  (mdx
-   (>= 2.4))
-  (ppx_expect
-   (and
-    :with-test
-    (>= v0.17)
-    (< v0.18)))
-  (sherlodoc
-   (and
-    :with-doc
-    (>= 0.2)))))
+   (>= 3.17))))
 
 (package
  (name myotherlib)
@@ -52,13 +41,40 @@
   (cmdlang
    (>= 0.0.9))
   (cmdlang-cmdliner-err-runner
-   (>= 0.0.16))
+   (>= 0.0.16))))
+
+(package
+ (name doc-experiment-docusaurus-tests)
+ (synopsis "Tests for doc-experiment-docusaurus")
+ (allow_empty)
+ (depends
+  (ocaml
+   (>= 5.2))
+  (mylib
+   (= :version))
+  (myotherlib
+   (= :version))
   (ppx_expect
    (and
-    :with-test
     (>= v0.17)
-    (< v0.18)))
+    (< v0.18)))))
+
+(package
+ (name doc-experiment-docusaurus-dev)
+ (synopsis "Dev targets and documentation")
+ (allow_empty)
+ (depends
+  (ocaml
+   (>= 5.2))
+  (doc-experiment-docusaurus-tests
+   (= :version))
+  (mylib
+   (= :version))
+  (myotherlib
+   (= :version))
+  (mdx
+   (>= 2.4))
+  (ocamlformat
+   (= 0.28.1))
   (sherlodoc
-   (and
-    :with-doc
-    (>= 0.2)))))
+   (>= 0.2))))
