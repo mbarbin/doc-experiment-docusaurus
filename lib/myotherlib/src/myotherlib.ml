@@ -1,10 +1,11 @@
-let hello_world = [%sexp "Hello, World From My Other Lib!"]
+let hello_world = "Hello, World From My Other Lib!"
 
 let print_cmd =
-  Command.basic
+  Command.make
     ~summary:"print hello world"
-    (let%map_open.Command () = return () in
-     fun () -> print_s hello_world)
+    (let open Command.Std in
+     let+ () = Arg.return () in
+     print_endline hello_world)
 ;;
 
 let main = Command.group ~summary:"" [ "print", print_cmd ]
