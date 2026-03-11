@@ -1,0 +1,10 @@
+(lang dunolint 1.0)
+
+(rule
+ (cond
+  ((path (glob test/**))
+   (enforce
+    (dune
+     (library
+      (and (not (has_field public_name))
+       (package (equals doc-experiment-docusaurus-tests)))))))))
