@@ -8,6 +8,9 @@ on:
     branches:
       - "**" # This will match pull requests targeting any branch
 
+permissions:
+  contents: read
+
 jobs:
   build:
     strategy:
@@ -15,42 +18,40 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-        ocaml-compiler:
-          - 5.3.x
+        ocaml-version:
+          - "5.4"
 
     runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        shell: bash
 
     steps:
       - name: Checkout code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
-      - name: Setup OCaml
-        uses: ocaml/setup-ocaml@dec6499fef64fc5d7ed43d43a87251b7b1c306f5 # v3.4.8
-        with:
-          ocaml-compiler: ${{ matrix.ocaml-compiler }}
-          opam-repositories: |
-            default: https://github.com/ocaml/opam-repository.git
-            mbarbin: https://github.com/mbarbin/opam-repository.git
-      #     janestreet-bleeding: https://github.com/janestreet/opam-repository.git
-      #     janestreet-bleeding-external: https://github.com/janestreet/opam-repository.git#external-packages
+      - name: Environment setup
+        run: |
+          echo "DUNE_WORKSPACE=$PWD/dune-workspace-${{ matrix.ocaml-version }}" >> "$GITHUB_ENV"
 
-      - name: Install dependencies
-        run: opam install . --deps-only --with-doc --with-test --with-dev-setup
+      - name: Setup Dune
+        uses: mbarbin/setup-dune@ae2985bcdedc6fb24e5743d6f9dace9cf262b41c # v2.0.0+patch-4
+        with:
+          version: "3.21.0"
+          workspace: ${{ env.DUNE_WORKSPACE }}
+          cache-prefix: "main-ci-${{ matrix.ocaml-version }}"
+          cache-readonly: ${{ github.ref != 'refs/heads/main' }}
+          steps: install-dune enable-pkg lazy-update-depexts install-gpatch install-depexts
 
       - name: Build
-        run: opam exec -- dune build @all @lint
+        run: dune build @all @lint
 
       - name: Run tests
-        run: opam exec -- dune runtest
+        run: dune runtest
+
+      - name: Build Doc
+        run: dune build @doc
 
       - name: Check for uncommitted changes
         run: git diff --exit-code
-
-      - name: Lint opam
-        uses: ocaml/setup-ocaml/lint-opam@dec6499fef64fc5d7ed43d43a87251b7b1c306f5 # v3.4.8
-
-      - name: Lint fmt
-        uses: ocaml/setup-ocaml/lint-fmt@dec6499fef64fc5d7ed43d43a87251b7b1c306f5 # v3.4.8
-
-      - name: Lint doc
-        uses: ocaml/setup-ocaml/lint-doc@dec6499fef64fc5d7ed43d43a87251b7b1c306f5 # v3.4.8
