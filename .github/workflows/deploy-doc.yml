@@ -34,7 +34,7 @@ jobs:
 
       - name: Install Docusaurus Dependencies
         working-directory: ./doc
-        run: npm ci
+        run: npm ci --ignore-scripts
 
       - name: Environment setup
         run: |
