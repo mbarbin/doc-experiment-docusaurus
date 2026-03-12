@@ -44,11 +44,11 @@ jobs:
           cache-readonly: ${{ github.ref != 'refs/heads/main' }}
           steps: install-dune enable-pkg lazy-update-depexts install-gpatch install-depexts
 
-      - name: Build
-        run: dune build @all @lint
+      - name: Build and Run Tests
+        run: dune build @all @runtest
 
-      - name: Run tests
-        run: dune runtest
+      - name: Lint
+        run: dune build @lint @fmt @unused-libs
 
       - name: Build Doc
         run: dune build @doc
