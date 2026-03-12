@@ -8,8 +8,8 @@ the doc up to date.
 We can make use of code defined in libraries.
 
 ```ocaml
-# Stdio.print_s Mylib.hello_world
-"Hello, World!"
+# print_endline Mylib.hello_world
+Hello, World!
 - : unit = ()
 ```
 
@@ -18,6 +18,6 @@ We can make use of code defined in libraries.
 We can make use of executables defined in packages.
 
 ```bash
-$ mylib print
-"Hello, World!"
+$ mybin print
+Hello, World!
 ```

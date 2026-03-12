@@ -1,4 +1,4 @@
-(lang dune 3.16)
+(lang dune 3.17)
 
 (name doc-experiment-docusaurus)
 
@@ -17,75 +17,20 @@
 
 (using mdx 0.4)
 
+(implicit_transitive_deps false)
+
 (package
  (name mylib)
  (synopsis "A package named mylib in this project")
  (depends
   (ocaml
    (>= 5.2))
-  (base
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (command-unix-for-opam
-   (>= 0.0.2))
-  (core
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (expect_test_helpers_core
-   (and
-    :with-test
-    (>= v0.17)
-    (< v0.18)))
-  (mdx
-   (>= 2.4))
-  (ppx_compare
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_enumerate
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_expect
-   (and
-    :with-test
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_hash
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_here
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_js_style
-   (and
-    :dev
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_let
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_sexp_conv
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_sexp_value
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (sherlodoc
-   (and
-    :with-doc
-    (>= 0.2)))
-  (stdio
-   (and
-    (>= v0.17)
-    (< v0.18)))))
+  (cmdlang
+   (>= 0.0.9))
+  (cmdlang-cmdliner-err-runner
+   (>= 0.0.16))
+  (dune-build-info
+   (>= 3.17))))
 
 (package
  (name myotherlib)
@@ -93,64 +38,43 @@
  (depends
   (ocaml
    (>= 5.2))
-  (base
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (command-unix-for-opam
-   (>= 0.0.2))
-  (core
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (expect_test_helpers_core
-   (and
-    :with-test
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_compare
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_enumerate
-   (and
-    (>= v0.17)
-    (< v0.18)))
+  (cmdlang
+   (>= 0.0.9))
+  (cmdlang-cmdliner-err-runner
+   (>= 0.0.16))))
+
+(package
+ (name doc-experiment-docusaurus-tests)
+ (synopsis "Tests for doc-experiment-docusaurus")
+ (allow_empty)
+ (depends
+  (ocaml
+   (>= 5.2))
+  (mylib
+   (= :version))
+  (myotherlib
+   (= :version))
   (ppx_expect
-   (and
-    :with-test
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_hash
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_here
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_js_style
-   (and
-    :dev
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_let
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_sexp_conv
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (ppx_sexp_value
-   (and
-    (>= v0.17)
-    (< v0.18)))
-  (sherlodoc
-   (and
-    :with-doc
-    (>= 0.2)))
-  (stdio
    (and
     (>= v0.17)
     (< v0.18)))))
+
+(package
+ (name doc-experiment-docusaurus-dev)
+ (synopsis "Dev targets and documentation")
+ (allow_empty)
+ (depends
+  (ocaml
+   (>= 5.2))
+  (doc-experiment-docusaurus-tests
+   (= :version))
+  (mylib
+   (= :version))
+  (myotherlib
+   (= :version))
+  (mdx
+   (>= 2.4))
+  (ocamlformat
+   (= 0.28.1))
+  (sherlodoc
+   (>= 0.2))))
