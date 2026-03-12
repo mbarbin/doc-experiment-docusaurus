@@ -40,9 +40,9 @@ See the [actions/upload-pages-artifact license](https://github.com/actions/uploa
 
 ---
 
-## ocaml/setup-ocaml
+## ocaml-dune/setup-dune
 
-- Repository: https://github.com/ocaml/setup-ocaml
+- Repository: https://github.com/ocaml-dune/setup-dune
 - License: MIT License
 
-See the [ocaml/setup-ocaml license](https://github.com/ocaml/setup-ocaml/blob/master/LICENSE) for full details.
+See the [ocaml-dune/setup-dune license](https://github.com/ocaml-dune/setup-dune/blob/main/LICENSE.md) for full details.
