@@ -10,13 +10,11 @@
   />
 </h1>
 
-Welcome to this experiment with documentation tools! In this project, we're exploring how Docusaurus can be used to document OCaml projects, while seamlessly integrating with OCaml's dedicated tools like dune, odoc, and ocaml-mdx.
-
-We envision this project as a template and example for the OCaml community, demonstrating the power and flexibility of combining these tools. We welcome PRs, encourage you to try this setup in your projects, and invite you to share your experiences and suggestions with us. Let's innovate documentation together!
+Welcome to this experiment with documentation tools! In this project, we're exploring how Docusaurus can be used to document OCaml projects, while seamlessly integrating with OCaml's dedicated tools like dune, odoc, etc.
 
 ## Status
 
-This repo is currently experimental and under construction. It's a work in progress, and I'm eager to dive deeper into the features, seeking to enrich this experiment with community feedback and collaboration.
+:construction: This repo is currently experimental and under construction. It's a work in progress.
 
 ## Acknowledgements
 
@@ -26,7 +24,8 @@ We extend our deepest gratitude to the following projects and their contributors
 
 - [ocaml](https://github.com/ocaml/ocaml): For the OCaml programming language, which is at the heart of our documentation journey.
 - [dune](https://github.com/ocaml/dune): For the Dune build system, enabling us to compile our OCaml projects with ease.
-- [setup-ocaml](https://github.com/ocaml/setup-ocaml): For simplifying the setup of OCaml environments in our CI workflows.
+- [setup-dune](https://github.com/ocaml-dune/setup-dune): For seting up OCaml environments in our CI workflows.
+- [setup-ocaml](https://github.com/ocaml/setup-ocaml): Another OCaml CI tool we also used to work on the repo.
 - [odoc](https://github.com/ocaml/odoc): For the odoc tool, which generates styled HTML documentation from OCaml packages.
 - [ocaml-mdx](https://github.com/realworldocaml/mdx): For allowing us to execute code blocks within our markdown files, ensuring our documentation is always up to date.
 - [sherlodoc](https://github.com/art-w/sherlodoc): For its innovative approach to searching OCaml documentation.
