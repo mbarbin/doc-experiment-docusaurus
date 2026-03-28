@@ -27,7 +27,7 @@ We extend our deepest gratitude to the following projects and their contributors
 - [setup-dune](https://github.com/ocaml-dune/setup-dune): For seting up OCaml environments in our CI workflows.
 - [setup-ocaml](https://github.com/ocaml/setup-ocaml): Another OCaml CI tool we also used to work on the repo.
 - [odoc](https://github.com/ocaml/odoc): For the odoc tool, which generates styled HTML documentation from OCaml packages.
-- [ocaml-mdx](https://github.com/realworldocaml/mdx): For allowing us to execute code blocks within our markdown files, ensuring our documentation is always up to date.
+- [mdexp](https://github.com/mbarbin/mdexp): For authoring markdown files including compiled OCaml code fragment and generated contents, ensuring our documentation is always up to date.
 - [sherlodoc](https://github.com/art-w/sherlodoc): For its innovative approach to searching OCaml documentation.
 - [docusaurus](https://github.com/facebook/docusaurus): For providing a platform to bring all our documentation together in a user-friendly and accessible manner.
 
