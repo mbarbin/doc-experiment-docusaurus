@@ -1,6 +1,8 @@
 (library
  (name myotherlib)
  (public_name myotherlib)
- (flags :standard -w +a-4-40-41-42-44-45-48-66 -warn-error +a -open Cmdlang)
- (libraries cmdlang)
+ (flags :standard -w +a-4-40-41-42-44-45-48-66 -warn-error +a)
+ (libraries)
+ (instrumentation
+  (backend bisect_ppx))
  (preprocess no_preprocessing))

@@ -1,7 +1,7 @@
 <h1 align="center">
   <p align="center">OCaml Documentation with Docusaurus and Odoc</p>
   <img
-    src="./img/doc-experiment.png?raw=true"
+    src="/doc-experiment-docusaurus/img/doc-experiment.png"
     width='384'
     alt="Logo"
   />

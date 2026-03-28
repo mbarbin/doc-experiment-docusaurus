@@ -1,5 +1,31 @@
-(mdx
+(toplevel
+ (name mylib_toplevel)
+ (libraries mylib))
+
+(library
+ (name hello_mylib_doc)
+ (package doc-experiment-docusaurus-tests)
+ (libraries mylib unix)
+ (inline_tests
+  (deps mylib_toplevel.exe %{bin:mybin}))
+ (instrumentation
+  (backend bisect_ppx))
+ (preprocess
+  (pps ppx_expect)))
+
+(rule
+ (target README.output)
  (package doc-experiment-docusaurus-dev)
- (deps
-  (package mylib))
- (preludes prelude.txt))
+ (enabled_if %{bin-available:mdexp})
+ (deps readme.ml)
+ (action
+  (with-stdout-to
+   %{target}
+   (run %{bin:mdexp} pp %{deps}))))
+
+(rule
+ (package doc-experiment-docusaurus-dev)
+ (enabled_if %{bin-available:mdexp})
+ (alias runtest)
+ (action
+  (diff README.md README.output)))
