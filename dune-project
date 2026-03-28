@@ -15,8 +15,6 @@
 
 (documentation "https://mbarbin.github.io/doc-experiment-docusaurus/")
 
-(using mdx 0.4)
-
 (implicit_transitive_deps false)
 
 (package
@@ -37,11 +35,7 @@
  (synopsis "Another package named myotherlib in this project")
  (depends
   (ocaml
-   (>= 5.2))
-  (cmdlang
-   (>= 0.0.9))
-  (cmdlang-cmdliner-err-runner
-   (>= 0.0.16))))
+   (>= 5.2))))
 
 (package
  (name doc-experiment-docusaurus-tests)
@@ -66,15 +60,13 @@
  (depends
   (ocaml
    (>= 5.2))
+  (bisect_ppx
+   (>= 2.8.3))
   (doc-experiment-docusaurus-tests
    (= :version))
   (mylib
    (= :version))
   (myotherlib
    (= :version))
-  (mdx
-   (>= 2.4))
   (ocamlformat
-   (= 0.28.1))
-  (sherlodoc
-   (>= 0.2))))
+   (= 0.29.0))))

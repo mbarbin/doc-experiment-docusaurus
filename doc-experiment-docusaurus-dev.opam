@@ -10,12 +10,11 @@ bug-reports: "https://github.com/mbarbin/doc-experiment-docusaurus/issues"
 depends: [
   "dune" {>= "3.17"}
   "ocaml" {>= "5.2"}
+  "bisect_ppx" {>= "2.8.3"}
   "doc-experiment-docusaurus-tests" {= version}
   "mylib" {= version}
   "myotherlib" {= version}
-  "mdx" {>= "2.4"}
-  "ocamlformat" {= "0.28.1"}
-  "sherlodoc" {>= "0.2"}
+  "ocamlformat" {= "0.29.0"}
   "odoc" {with-doc}
 ]
 build: [
