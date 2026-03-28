@@ -69,4 +69,6 @@
   (myotherlib
    (= :version))
   (ocamlformat
-   (= 0.29.0))))
+   (= 0.29.0))
+  (sherlodoc
+   (>= 3.1.0))))
